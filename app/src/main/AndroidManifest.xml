@@ -12,11 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TimDuaUTS">
         <activity
-            android:name=".MainActivity"
-            android:exported="false" />
-
-        <activity
-            android:name=".LoginActivity"
+            android:name=".SplashActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -24,6 +20,19 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        
+        <activity
+            android:name=".Login"
+            android:exported="true"/>
+
+        <activity
+            android:name=".Daftar"
+            android:exported="true"/>
+
+        <activity
+            android:name=".MainActivity"
+            android:exported="false" />
+
     </application>
 
 </manifest>
