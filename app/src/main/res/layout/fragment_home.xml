@@ -46,7 +46,7 @@
                 android:layout_width="30dp"
                 android:layout_height="30dp"
                 android:layout_alignParentEnd="true"
-                android:layout_marginTop="4dp"
+                android:layout_marginTop="40dp"
                 android:src="@drawable/ic_notifications"
                 app:tint="#1B5E20" />
         </RelativeLayout>

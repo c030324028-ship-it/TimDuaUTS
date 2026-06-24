@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginBottom="12dp"
-    app:cardCornerRadius="14dp"
+    android:layout_marginStart="16dp"
+    android:layout_marginEnd="16dp"
+    android:layout_marginBottom="14dp"
+    app:cardCornerRadius="16dp"
     app:cardElevation="3dp">
 
     <LinearLayout
@@ -16,9 +19,8 @@
 
         <ImageView
             android:id="@+id/imgTanaman"
-            android:layout_width="76dp"
-            android:layout_height="76dp"
-            android:background="#E8F5E9"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
             android:scaleType="centerCrop"
             android:src="@drawable/monstera_adansonii" />
 
@@ -35,30 +37,36 @@
                 android:layout_height="wrap_content"
                 android:text="Monstera Adansonii"
                 android:textColor="#1B1B1B"
-                android:textSize="16sp"
+                android:textSize="18sp"
                 android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/tvKategoriTanaman"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="3dp"
-                android:text="Tanaman Hias Daun"
+                android:layout_marginTop="4dp"
+                android:text="Tanaman Hias"
                 android:textColor="#2E7D32"
-                android:textSize="13sp" />
+                android:textSize="14sp" />
 
             <TextView
                 android:id="@+id/tvDeskripsiTanaman"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
+                android:layout_marginTop="6dp"
                 android:ellipsize="end"
                 android:maxLines="2"
-                android:text="Tanaman hias populer dengan bentuk daun berlubang yang unik dan mudah dirawat."
+                android:text="Tanaman populer dengan daun berlubang dan mudah dirawat."
                 android:textColor="#666666"
-                android:textSize="12sp" />
+                android:textSize="13sp" />
 
         </LinearLayout>
+
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_arrow_forward"
+            app:tint="#2E7D32" />
 
     </LinearLayout>
 
