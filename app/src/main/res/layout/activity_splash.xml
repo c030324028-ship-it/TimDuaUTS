@@ -18,16 +18,16 @@
             android:layout_width="249dp"
             android:layout_height="136dp"
             android:scaleType="centerCrop"
-            app:srcCompat="@mipmap/ic_logo_plancare" />
+            app:srcCompat="@mipmap/ic_logo_botanicare" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:text="PlanCare"
+            android:text="@string/app_name"
             android:textColor="#2E7D32"
             android:textSize="32sp"
-            android:textStyle="bold"/>
+            android:textStyle="bold" />
 
         <TextView
             android:layout_width="wrap_content"
