@@ -1,11 +1,14 @@
 package com.example.timduauts
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.ImageView
 import android.widget.LinearLayout
+import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.Fragment
 
 class ProfileFragments : Fragment() {
@@ -25,6 +28,7 @@ class ProfileFragments : Fragment() {
         val layoutTentang = view.findViewById<LinearLayout>(R.id.layoutTentang)
         val detailTentang = view.findViewById<LinearLayout>(R.id.detailTentang)
         val iconTentang = view.findViewById<ImageView>(R.id.iconTentang)
+        val btnLogout = view.findViewById<Button>(R.id.btnLogout)
 
         layoutTentang.setOnClickListener {
 
@@ -70,6 +74,11 @@ class ProfileFragments : Fragment() {
 
         }
 
+        btnLogout.setOnClickListener {
+            (activity as? MainActivity)?.tampilkanDialogLogout()
+        }
+
         return view
     }
+
 }

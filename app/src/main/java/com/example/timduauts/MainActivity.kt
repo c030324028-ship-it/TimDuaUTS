@@ -1,6 +1,8 @@
 package com.example.timduauts
 
+import android.content.Intent
 import android.os.Bundle
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.fragment.app.Fragment
@@ -54,5 +56,20 @@ class MainActivity : AppCompatActivity() {
             .replace(R.id.fragment_container, fragment)
             .commit()
 
+    }
+
+    public fun tampilkanDialogLogout() {
+        AlertDialog.Builder(this)
+            .setTitle("Konfirmasi Logout")
+            .setMessage("Apakah Anda yakin ingin keluar dari aplikasi?")
+            .setPositiveButton("Ya") { _, _ ->
+                val intentLogout = Intent(this, Login::class.java)
+                intentLogout.flags = Intent.FLAG_ACTIVITY_NEW_TASK or
+                        Intent.FLAG_ACTIVITY_CLEAR_TASK
+                startActivity(intentLogout)
+                finish()
+            }
+            .setNegativeButton("Tidak", null)
+            .show()
     }
 }
