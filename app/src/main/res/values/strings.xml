@@ -1,5 +1,7 @@
 <resources>
     <string name="app_name">BotaniCare</string>
+    <string name="app_version">BotaniCare v1.0</string>
+    <string name="app_description">BotaniCare adalah aplikasi katalog digital yang membantu pengguna mengenali berbagai jenis tanaman hias serta memahami cara perawatan yang baik dan benar.</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
     <string name="login_title">Login</string>
