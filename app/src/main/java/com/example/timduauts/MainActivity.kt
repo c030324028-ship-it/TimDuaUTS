@@ -2,6 +2,7 @@ package com.example.timduauts
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatDelegate
 import androidx.fragment.app.Fragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
@@ -15,6 +16,7 @@ class MainActivity : AppCompatActivity() {
         if (savedInstanceState == null) {
             tampilkanFragment(HomeFragments())
         }
+        delegate.localNightMode = AppCompatDelegate.MODE_NIGHT_NO
 
         val homeFragment = HomeFragments()
         val bundle = Bundle()
