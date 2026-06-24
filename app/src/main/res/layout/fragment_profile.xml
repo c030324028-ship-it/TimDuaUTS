@@ -282,6 +282,23 @@
                         android:text="https://fonts.google.com/icons"
                         android:textColor="#2E7D32"
                         android:textSize="14sp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:text="Plant Images by Wikimedia Commons"
+                        android:textColor="#333333"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:text="https://commons.wikimedia.org"
+                        android:textColor="#2E7D32"
+                        android:textSize="14sp" />
+
                 </LinearLayout>
             </LinearLayout>
         </androidx.cardview.widget.CardView>
