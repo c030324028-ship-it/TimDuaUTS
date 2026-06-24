@@ -6,13 +6,10 @@
     android:background="@color/primary_green"
     tools:context=".ListFragments">
 
-    <TextView
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_tanaman"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:gravity="center"
-        android:text="@string/list"
-        android:textColor="@color/text_on_green"
-        android:textSize="24sp"
-        android:textStyle="bold" />
-
+        android:padding="8dp"
+        android:clipToPadding="false" />
 </FrameLayout>
