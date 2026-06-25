@@ -20,7 +20,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        
+        <activity
+            android:name=".DetailTanamanActivity" />
         <activity
             android:name=".Login"
             android:exported="true"/>

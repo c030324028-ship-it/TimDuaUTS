@@ -1,5 +1,6 @@
 package com.example.timduauts
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -36,9 +37,17 @@ class ListFragments : Fragment() {
             Tanaman("Costus Merah", "Tanaman Hias", "Tanaman dengan bunga merah berbentuk kerucut.", R.drawable.costus_merah)
         )
 
-        // Adapter dengan aksi klik
         recyclerView.adapter = TanamanAdapter(listTanaman) { tanaman ->
-            Toast.makeText(context, "Kamu memilih: ${tanaman.nama}", Toast.LENGTH_SHORT).show()
+
+            val intent = Intent(requireContext(), DetailTanamanActivity::class.java)
+
+            intent.putExtra("nama", tanaman.nama)
+            intent.putExtra("kategori", tanaman.kategori)
+            intent.putExtra("deskripsi", tanaman.deskripsi)
+            intent.putExtra("gambar", tanaman.gambar)
+
+            startActivity(intent)
+
         }
     }
 }
