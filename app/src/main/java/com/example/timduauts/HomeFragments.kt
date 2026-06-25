@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -22,6 +23,10 @@ class HomeFragments : Fragment() {
             container,
             false
         )
+
+        val tvSapaan = view.findViewById<TextView>(R.id.tvSapaan)
+        val username = arguments?.getString("username") ?: "Admin"
+        tvSapaan.text = "Selamat datang, $username! 👋"
 
         val rvPopulerHome =
             view.findViewById<RecyclerView>(
@@ -48,13 +53,16 @@ class HomeFragments : Fragment() {
                 R.drawable.kaktus_mini
             )
         )
+
         rvPopulerHome.layoutManager =
             LinearLayoutManager(requireContext())
 
-        // Bagian ini diperbarui: menambahkan parameter aksi klik
         rvPopulerHome.adapter = TanamanAdapter(listTanaman) { tanaman ->
-            // Aksi saat item diklik di halaman Home
-            Toast.makeText(context, "Kamu memilih: ${tanaman.nama}", Toast.LENGTH_SHORT).show()
+            Toast.makeText(
+                context,
+                "Kamu memilih: ${tanaman.nama}",
+                Toast.LENGTH_SHORT
+            ).show()
         }
 
         return view

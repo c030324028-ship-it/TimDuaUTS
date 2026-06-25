@@ -10,27 +10,27 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity() {
 
+    private var username: String? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
         supportActionBar?.hide()
-        if (savedInstanceState == null) {
-            tampilkanFragment(HomeFragments())
-        }
         delegate.localNightMode = AppCompatDelegate.MODE_NIGHT_NO
 
-        val homeFragment = HomeFragments()
-        val bundle = Bundle()
-        bundle.putString("username", intent.getStringExtra("username"))
-        homeFragment.arguments = bundle
+        username = intent.getStringExtra("username")
 
+        if (savedInstanceState == null) {
+            tampilkanHome()
+        }
 
         val bottomNav = findViewById<BottomNavigationView>(R.id.bottom_navigation)
+
         bottomNav.setOnItemSelectedListener { item ->
             when (item.itemId) {
                 R.id.menu_home -> {
-                    tampilkanFragment(HomeFragments())
+                    tampilkanHome()
                     true
                 }
 
@@ -47,25 +47,30 @@ class MainActivity : AppCompatActivity() {
                 else -> false
             }
         }
+    }
 
+    private fun tampilkanHome() {
+        val homeFragment = HomeFragments()
+        val bundle = Bundle()
+        bundle.putString("username", username)
+        homeFragment.arguments = bundle
+        tampilkanFragment(homeFragment)
     }
 
     private fun tampilkanFragment(fragment: Fragment) {
-
         supportFragmentManager.beginTransaction()
             .replace(R.id.fragment_container, fragment)
             .commit()
-
     }
 
-    public fun tampilkanDialogLogout() {
+    fun tampilkanDialogLogout() {
         AlertDialog.Builder(this)
             .setTitle("Konfirmasi Logout")
             .setMessage("Apakah Anda yakin ingin keluar dari aplikasi?")
             .setPositiveButton("Ya") { _, _ ->
                 val intentLogout = Intent(this, Login::class.java)
-                intentLogout.flags = Intent.FLAG_ACTIVITY_NEW_TASK or
-                        Intent.FLAG_ACTIVITY_CLEAR_TASK
+                intentLogout.flags =
+                    Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
                 startActivity(intentLogout)
                 finish()
             }
