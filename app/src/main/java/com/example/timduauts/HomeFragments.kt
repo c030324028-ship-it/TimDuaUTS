@@ -1,5 +1,5 @@
 package com.example.timduauts
-
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -27,6 +27,13 @@ class HomeFragments : Fragment() {
         val tvSapaan = view.findViewById<TextView>(R.id.tvSapaan)
         val username = arguments?.getString("username") ?: "Admin"
         tvSapaan.text = "Selamat datang, $username! 👋"
+        val tvLihatSemua = view.findViewById<TextView>(R.id.tvLihatSemua)
+
+        tvLihatSemua.setOnClickListener {
+            parentFragmentManager.beginTransaction()
+                .replace(R.id.fragment_container, ListFragments())
+                .commit()
+        }
 
         val rvPopulerHome =
             view.findViewById<RecyclerView>(
@@ -58,11 +65,14 @@ class HomeFragments : Fragment() {
             LinearLayoutManager(requireContext())
 
         rvPopulerHome.adapter = TanamanAdapter(listTanaman) { tanaman ->
-            Toast.makeText(
-                context,
-                "Kamu memilih: ${tanaman.nama}",
-                Toast.LENGTH_SHORT
-            ).show()
+            val intent = Intent(requireContext(), DetailTanamanActivity::class.java)
+
+            intent.putExtra("nama", tanaman.nama)
+            intent.putExtra("kategori", tanaman.kategori)
+            intent.putExtra("deskripsi", tanaman.deskripsi)
+            intent.putExtra("gambar", tanaman.gambar)
+
+            startActivity(intent)
         }
 
         return view
