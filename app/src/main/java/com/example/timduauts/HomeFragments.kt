@@ -4,8 +4,8 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -27,8 +27,14 @@ class HomeFragments : Fragment() {
         val tvSapaan = view.findViewById<TextView>(R.id.tvSapaan)
         val username = arguments?.getString("username") ?: "Admin"
         tvSapaan.text = "Selamat datang, $username! 👋"
-        val tvLihatSemua = view.findViewById<TextView>(R.id.tvLihatSemua)
 
+        val ivNotif = view.findViewById<ImageView>(R.id.ivNotif)
+        ivNotif?.setOnClickListener {
+            val intent = Intent(requireContext(), NotificationActivity::class.java)
+            startActivity(intent)
+        }
+
+        val tvLihatSemua = view.findViewById<TextView>(R.id.tvLihatSemua)
         tvLihatSemua.setOnClickListener {
             parentFragmentManager.beginTransaction()
                 .replace(R.id.fragment_container, ListFragments())
@@ -49,13 +55,13 @@ class HomeFragments : Fragment() {
             ),
             Tanaman(
                 "Lidah Mertua",
-                "Tanaman Hias",
+                "Tanaman Obat",
                 "Tanaman yang efektif menyaring udara.",
                 R.drawable.lidah_mertua
             ),
             Tanaman(
                 "Kaktus Mini",
-                "Kaktus",
+                "Tanaman Hias",
                 "Tanaman tahan kering yang cantik.",
                 R.drawable.kaktus_mini
             )

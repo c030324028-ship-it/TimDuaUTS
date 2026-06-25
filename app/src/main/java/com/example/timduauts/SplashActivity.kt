@@ -1,5 +1,6 @@
 package com.example.timduauts
 
+import android.content.Context
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -25,9 +26,18 @@ class SplashActivity : AppCompatActivity() {
         }
 
         Handler(Looper.getMainLooper()).postDelayed({
-            val intentSplashActivity = Intent(this, Login::class.java)
-            intentSplashActivity.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
-            startActivity(intentSplashActivity)
+            val sharedPref = getSharedPreferences("UserSession", Context.MODE_PRIVATE)
+            val isLoggedIn = sharedPref.getBoolean("IS_LOGGED_IN", false)
+
+            if (isLoggedIn) {
+                val savedName = sharedPref.getString("LOGGED_USERNAME", "Admin")
+                val intentDirect = Intent(this, MainActivity::class.java)
+                intentDirect.putExtra("username", savedName)
+                startActivity(intentDirect)
+            } else {
+                val intentLogin = Intent(this, Login::class.java)
+                startActivity(intentLogin)
+            }
             finish()
         }, 3000)
     }

@@ -27,6 +27,9 @@ class ListFragments : Fragment() {
         recyclerView.layoutManager = LinearLayoutManager(context)
 
         val listTanaman = listOf(
+            Tanaman("Monstera Adansonii", "Tanaman Hias", "Tanaman populer dengan daun berlubang.", R.drawable.monstera_adansonii),
+            Tanaman("Lidah Mertua", "Tanaman Obat", "Tanaman yang efektif menyaring udara.", R.drawable.lidah_mertua),
+            Tanaman("Kaktus Mini", "Tanaman Hias", "Tanaman tahan kering yang cantik.", R.drawable.kaktus_mini),
             Tanaman("Hydnora Africana", "Tanaman Unik", "Tanaman parasit yang unik.", R.drawable.hydnora_africana),
             Tanaman("Bunga Anggrek", "Tanaman Hias", "Anggrek dengan bunga cantik.", R.drawable.bunga_anggrek_vanda),
             Tanaman("Rafflesia", "Bunga Nasional", "Bunga raksasa yang langka.", R.drawable.rafflesia_arnoldi),

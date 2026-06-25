@@ -115,7 +115,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="6dp"
                         android:lineSpacingExtra="3dp"
-                        android:text="PlantCare adalah aplikasi katalog digital yang membantu pengguna mengenali berbagai jenis tanaman hias serta memahami cara perawatan yang baik dan benar."
+                        android:text="BotaniCare adalah aplikasi katalog digital yang membantu pengguna mengenali berbagai jenis tanaman hias serta memahami cara perawatan yang baik dan benar."
                         android:textColor="#444444"
                         android:textSize="14sp" />
                 </LinearLayout>

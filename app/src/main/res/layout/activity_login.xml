@@ -34,7 +34,7 @@
             android:id="@+id/etUsernameLogin"
             android:layout_width="match_parent"
             android:layout_height="55dp"
-            android:hint="Email atau Username"
+            android:hint="Username"
             android:inputType="text"
             android:textSize="16sp" />
     </com.google.android.material.textfield.TextInputLayout>

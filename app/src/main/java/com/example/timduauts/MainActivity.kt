@@ -1,5 +1,6 @@
 package com.example.timduauts
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AlertDialog
@@ -68,9 +69,11 @@ class MainActivity : AppCompatActivity() {
             .setTitle("Konfirmasi Logout")
             .setMessage("Apakah Anda yakin ingin keluar dari aplikasi?")
             .setPositiveButton("Ya") { _, _ ->
+                val sharedPref = getSharedPreferences("UserSession", Context.MODE_PRIVATE)
+                sharedPref.edit().putBoolean("IS_LOGGED_IN", false).apply()
+
                 val intentLogout = Intent(this, Login::class.java)
-                intentLogout.flags =
-                    Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+                intentLogout.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
                 startActivity(intentLogout)
                 finish()
             }
